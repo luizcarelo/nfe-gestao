@@ -1,0 +1,2 @@
+{"level":"info","message":"🐘 Conectando ao PostgreSQL 18 para execução do Setup...","service":"erp-fiscal-backend","timestamp":"2026-05-15 20:22:53"}
+{"level":"info","message":"✅ Estrutura do Banco de Dados e Regras criadas com sucesso!","service":"erp-fiscal-backend","timestamp":"2026-05-15 20:22:53"}

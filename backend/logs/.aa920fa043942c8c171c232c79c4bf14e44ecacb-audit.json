@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/home/luizcarelo/nfe-gestao/backend/logs/.aa920fa043942c8c171c232c79c4bf14e44ecacb-audit.json",
+    "files": [
+        {
+            "date": 1778887373468,
+            "name": "/home/luizcarelo/nfe-gestao/backend/logs/error-2026-05-15.log",
+            "hash": "1403c51792bcb3c02bb79b7abfad7c6a27d7011260b617e90bb41143bba7e66a"
+        }
+    ],
+    "hashType": "sha256"
+}
