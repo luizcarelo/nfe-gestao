@@ -51,3 +51,4 @@
 {"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
 {"level":"error","message":"❌ [SEFAZ Provider] Erro de comunicação: SEFAZ: Ambiente Nacional Indisponível (HTTP 503)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
 {"level":"error","message":"   ❌ Falha na sincronização da empresa 19131243000197: Falha na comunicação com a SEFAZ: SEFAZ: Ambiente Nacional Indisponível (HTTP 503)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
+{"level":"error","message":"❌ [Job 7] Erro: Timeout na comunicação com os servidores da SEFAZ.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:03"}

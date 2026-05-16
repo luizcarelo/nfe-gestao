@@ -539,3 +539,25 @@
 {"level":"error","message":"   ❌ Falha na sincronização da empresa 19131243000197: Falha na comunicação com a SEFAZ: SEFAZ: Ambiente Nacional Indisponível (HTTP 503)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
 {"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
 {"level":"info","message":"✅ [Job 6] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:03"}
+{"level":"info","message":"⏰ [CronManager] Disparando rotina de Sincronização SEFAZ...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] A iniciar rotina global de captura de XMLs...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] 1 empresas elegíveis para sincronização.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"⚙️ [Job 7] A iniciar worker: sync_nfe_sefaz","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"   🔄 [Job 7] Sincronizando: OPEN KNOWLEDGE BRASIL (CNPJ: 19131243000197)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"🌐 [SEFAZ Provider] A iniciar comunicação segura com a SEFAZ para o CNPJ 19131243000197...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:00"}
+{"level":"info","message":"✅ [SEFAZ Provider] Consulta concluída. 1 novos XMLs encontrados para o CNPJ 19131243000197.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:02"}
+{"level":"warn","message":"   ⚠️ Falha ao salvar uma nota da SEFAZ: value too long for type character varying(44)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:02"}
+{"level":"info","message":"   ✅ [Job 7] Concluído. Novas: 0 | Duplicadas: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:02"}
+{"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:02"}
+{"level":"error","message":"❌ [Job 7] Erro: Timeout na comunicação com os servidores da SEFAZ.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:13:03"}
+{"level":"info","message":"⏰ [CronManager] Disparando rotina de Sincronização SEFAZ...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] A iniciar rotina global de captura de XMLs...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] 1 empresas elegíveis para sincronização.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"⚙️ [Job 8] A iniciar worker: sync_nfe_sefaz","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"   🔄 [Job 8] Sincronizando: OPEN KNOWLEDGE BRASIL (CNPJ: 19131243000197)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"🌐 [SEFAZ Provider] A iniciar comunicação segura com a SEFAZ para o CNPJ 19131243000197...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:00"}
+{"level":"info","message":"✅ [SEFAZ Provider] Consulta concluída. 1 novos XMLs encontrados para o CNPJ 19131243000197.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:02"}
+{"level":"warn","message":"   ⚠️ Falha ao salvar uma nota da SEFAZ: value too long for type character varying(44)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:02"}
+{"level":"info","message":"   ✅ [Job 8] Concluído. Novas: 0 | Duplicadas: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:02"}
+{"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:02"}
+{"level":"info","message":"✅ [Job 8] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:14:03"}
