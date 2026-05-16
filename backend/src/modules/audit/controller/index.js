@@ -1,24 +1,55 @@
-// Ficheiro: backend/src/modules/audit/controller/index.js
-
-const { logger } = require('../../../infra/logger');
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/audit/controller/index.js
+ * Controlador de Auditoria de Sistema
+ */
 const auditService = require('../service');
+const AppError = require('../../../shared/errors/AppError');
 
 class AuditController {
+  
   /**
-   * Endpoint para listar a trilha de auditoria.
-   * Limita-se a receber o pedido HTTP e devolver a resposta formatada do Service.
+   * Lista o histórico de ações dos utilizadores do Tenant.
+   * Rota ideal para uma tabela no painel do Administrador (SaaS).
    */
-  async logs(req, res) {
-    try {
-      const limit = req.query.limit ? parseInt(req.query.limit, 10) : 100;
-      
-      const data = await auditService.getSystemLogs(limit);
-      
-      return res.json({ success: true, data });
-    } catch (error) {
-      logger.error(`[AuditController] Erro ao processar o pedido de logs: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Falha ao carregar a trilha de auditoria de conformidade.' });
+  async listar(req, res) {
+    const { tenant_id, role } = req.user;
+    
+    // Medida de segurança extra: Apenas admins ou auditores podem ver logs de segurança
+    if (role !== 'admin' && role !== 'auditor') {
+        throw new AppError('Acesso negado. Apenas administradores podem visualizar os logs de auditoria.', 403);
     }
+
+    const { pagina = 1, limite = 50, user_id, acao, entidade, data_inicio, data_fim } = req.query;
+
+    const filtros = { user_id, acao, entidade, data_inicio, data_fim };
+
+    const result = await auditService.listarLogs(tenant_id, filtros, parseInt(pagina), parseInt(limite));
+
+    return res.status(200).json({
+      success: true,
+      data: result.dados,
+      paginacao: result.metadados
+    });
+  }
+
+  /**
+   * Consulta os detalhes de um log, incluindo o payload dos dados alterados.
+   */
+  async detalhar(req, res) {
+    const { tenant_id, role } = req.user;
+    const { id } = req.params;
+
+    if (role !== 'admin' && role !== 'auditor') {
+        throw new AppError('Acesso negado. Apenas administradores podem visualizar os logs de auditoria.', 403);
+    }
+
+    const log = await auditService.obterDetalhes(tenant_id, id);
+    if (!log) throw new AppError('Registo de auditoria não encontrado.', 404);
+
+    return res.status(200).json({
+      success: true,
+      data: log
+    });
   }
 }
 

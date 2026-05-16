@@ -1,11 +1,18 @@
-// Ficheiro: backend/src/modules/audit/routes/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/audit/routes/index.js
+ * Rotas da API para visualização dos logs de Auditoria de Sistema
+ */
 const { Router } = require('express');
-const controller = require('../controller');
+const auditController = require('../controller');
 
-const routes = Router();
+const auditRoutes = Router();
 
-// Endpoint de leitura dos logs (Aceita '?limit=50' via Query Params)
-routes.get('/logs', (req, res) => controller.logs(req, res));
+// Rota de listagem de logs (com paginação e filtros)
+// Ex: GET /v1/audit?acao=DOWNLOAD_XML&entidade=NFE
+auditRoutes.get('/', auditController.listar);
 
-module.exports = routes;
+// Rota para detalhes completos do log (dados novos vs dados antigos)
+// Ex: GET /v1/audit/123
+auditRoutes.get('/:id', auditController.detalhar);
+
+module.exports = auditRoutes;

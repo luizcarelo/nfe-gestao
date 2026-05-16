@@ -1,14 +1,34 @@
-// Ficheiro: backend/src/modules/jobs/routes/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/jobs/routes/index.js
+ * Rotas da API para o Monitor de Tarefas (Jobs)
+ */
 const { Router } = require('express');
-const controller = require('../controller');
+const jobController = require('../controller');
 
-const routes = Router();
+const jobRoutes = Router();
 
-// Listagem do histórico de tarefas e auditorias (Para o Canvas/Monitor)
-routes.get('/', (req, res) => controller.index(req, res));
+// Estatísticas globais para o topo da página do monitor
+// GET /v1/jobs/stats
+jobRoutes.get('/stats', jobController.obterEstatisticas);
 
-// Gatilho para orquestrar a extração em lote (NF-e, NFS-e e Parceiros)
-routes.post('/sync', (req, res) => controller.syncAll(req, res));
+// Inicia um novo job
+// POST /v1/jobs/sync
+jobRoutes.post('/sync', jobController.iniciarSincronizacao);
 
-module.exports = routes;
+// Lista histórico com filtros opcionais (ex: ?status=erro)
+// GET /v1/jobs/
+jobRoutes.get('/', jobController.listar);
+
+// Consulta status específico
+// GET /v1/jobs/:id
+jobRoutes.get('/:id', jobController.consultarStatus);
+
+// Tenta executar novamente uma tarefa que falhou (Retry)
+// POST /v1/jobs/:id/retry
+jobRoutes.post('/:id/retry', jobController.tentarNovamente);
+
+// Cancela uma tarefa
+// POST /v1/jobs/:id/cancel
+jobRoutes.post('/:id/cancel', jobController.cancelar);
+
+module.exports = jobRoutes;

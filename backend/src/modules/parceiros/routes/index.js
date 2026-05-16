@@ -1,11 +1,20 @@
-// Ficheiro: backend/src/modules/parceiros/routes/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/parceiros/routes/index.js
+ * Rotas do Módulo de Parceiros (Clientes/Fornecedores)
+ */
 const { Router } = require('express');
-const controller = require('../controller');
+const parceiroController = require('../controller');
 
-const routes = Router();
+const parceiroRoutes = Router();
 
-routes.get('/list/:empresaId', (req, res) => controller.index(req, res));
-routes.post('/sync/:empresaId', (req, res) => controller.sync(req, res));
+// Rota solicitada para consulta externa via BrasilAPI
+// Ex: GET /v1/parceiros/api/cnpj/19131243000197
+parceiroRoutes.get('/api/cnpj/:cnpj', parceiroController.consultarCnpj);
 
-module.exports = routes;
+// Listar parceiros cadastrados do Tenant
+parceiroRoutes.get('/', parceiroController.listar);
+
+// Cadastrar ou atualizar parceiro (Upsert)
+parceiroRoutes.post('/', parceiroController.cadastrar);
+
+module.exports = parceiroRoutes;

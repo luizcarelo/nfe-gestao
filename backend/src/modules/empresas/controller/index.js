@@ -1,92 +1,80 @@
-// Ficheiro: backend/src/modules/empresas/controller/index.js
-
-const { logger } = require('../../../infra/logger');
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/empresas/controller/index.js
+ * Controlador de Gestão de Empresas com tratamento assíncrono (try/catch + next)
+ */
 const empresaService = require('../service');
+const AppError = require('../../../shared/errors/AppError');
 
 class EmpresaController {
-  async index(req, res) {
+  
+  async cadastrar(req, res, next) {
     try {
-      const data = await empresaService.listMatrizes();
-      return res.json({ success: true, data });
+      const { tenant_id } = req.user;
+      const { cnpj } = req.body;
+
+      if (!cnpj) throw new AppError('O CNPJ é obrigatório para cadastrar a empresa.', 400);
+
+      const empresa = await empresaService.cadastrar(tenant_id, req.body);
+
+      return res.status(201).json({
+        success: true,
+        message: 'Empresa cadastrada com sucesso.',
+        data: empresa
+      });
     } catch (error) {
-      logger.error(`[EmpresaController] Erro ao listar empresas: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Erro interno ao listar entidades.' });
+      next(error); // Permite que o erro 409 chegue ao nosso middleware global e ao script de teste
     }
   }
 
-  async lookup(req, res) {
+  async listar(req, res, next) {
     try {
-      // Recebe o matrizId via Query Params para validar a IE no CCC caso exista um A1
-      const matrizId = req.query.matrizId || null;
-      const data = await empresaService.lookupCnpj(req.params.cnpj, matrizId);
-      return res.json({ success: true, data });
+      const { tenant_id } = req.user;
+      const empresas = await empresaService.listar(tenant_id);
+
+      return res.status(200).json({
+        success: true,
+        data: empresas
+      });
     } catch (error) {
-      logger.error(`[EmpresaController] Erro no lookup: ${error.message}`);
-      return res.status(404).json({ success: false, message: error.message });
+      next(error);
     }
   }
 
-  async store(req, res) {
+  async detalhar(req, res, next) {
     try {
-      const result = await empresaService.createMatriz(req.body);
-      return res.json({ success: true, data: result, message: 'Empresa Matriz cadastrada com sucesso.' });
+      const { tenant_id } = req.user;
+      const { id } = req.params;
+
+      const empresa = await empresaService.obterDetalhes(tenant_id, id);
+      if (!empresa) throw new AppError('Empresa não encontrada.', 404);
+
+      return res.status(200).json({
+        success: true,
+        data: empresa
+      });
     } catch (error) {
-      logger.error(`[EmpresaController] Erro na criação: ${error.message}`);
-      return res.status(500).json({ success: false, message: error.message });
+      next(error);
     }
   }
 
-  async update(req, res) {
+  async configurarCertificado(req, res, next) {
     try {
-      const result = await empresaService.updateEmpresa(req.params.id, req.body);
-      return res.json({ success: true, data: result, message: 'Dados da empresa atualizados com sucesso.' });
-    } catch (error) {
-      logger.error(`[EmpresaController] Erro na edição: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Falha ao atualizar dados da entidade.' });
-    }
-  }
+      const { tenant_id } = req.user;
+      const { id } = req.params;
+      const { arquivo_pfx_base64, senha } = req.body;
 
-  async uploadCertificado(req, res) {
-    try {
-      if (!req.file) return res.status(400).json({ success: false, message: 'Ficheiro do certificado não fornecido.' });
-      
-      const { senha } = req.body;
-      if (!senha) return res.status(400).json({ success: false, message: 'A senha do certificado é obrigatória.' });
+      if (!arquivo_pfx_base64 || !senha) {
+          throw new AppError('O arquivo do certificado (Base64) e a senha são obrigatórios.', 400);
+      }
 
-      const result = await empresaService.saveCertificado(req.params.id, req.file.buffer, senha);
-      return res.json({ success: true, data: result, message: 'Certificado guardado em custódia segura.' });
-    } catch (error) {
-      logger.error(`[EmpresaController] Erro no certificado: ${error.message}`);
-      return res.status(400).json({ success: false, message: error.message });
-    }
-  }
+      await empresaService.configurarCertificadoA1(tenant_id, id, arquivo_pfx_base64, senha);
 
-  async listFiliais(req, res) {
-    try {
-      const data = await empresaService.listFiliais(req.params.matrizId);
-      return res.json({ success: true, data });
+      return res.status(200).json({
+        success: true,
+        message: 'Certificado digital importado e configurado com segurança.'
+      });
     } catch (error) {
-      return res.status(500).json({ success: false, message: error.message });
-    }
-  }
-
-  async storeFilial(req, res) {
-    try {
-      const result = await empresaService.createFilial(req.params.matrizId, req.body.cnpj);
-      return res.json({ success: true, data: result, message: 'Filial vinculada à Matriz com sucesso.' });
-    } catch (error) {
-      logger.error(`[EmpresaController] Erro ao cadastrar filial: ${error.message}`);
-      return res.status(500).json({ success: false, message: error.message });
-    }
-  }
-
-  async analiseEstruturaIa(req, res) {
-    try {
-       const analise = await empresaService.analiseEstruturaIa(req.params.matrizId);
-       return res.json({ success: true, data: analise });
-    } catch (error) {
-       logger.error(`[EmpresaController] Erro na análise IA: ${error.message}`);
-       return res.status(500).json({ success: false, message: error.message });
+      next(error);
     }
   }
 }

@@ -1,104 +1,167 @@
-// Ficheiro: backend/src/modules/jobs/service/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/jobs/service/index.js
+ * Serviço de Monitorização de Tarefas (Jobs) - Arquitetura SaaS
+ * Inclui listagem, retry (tentar novamente), cancelamento e estatísticas.
+ */
 const { pool } = require('../../../config/database');
 const { logger } = require('../../../infra/logger');
-const nfeService = require('../../nfe/service');
-const nfseService = require('../../nfse/service');
-const parceirosService = require('../../parceiros/service');
+const AppError = require('../../../shared/errors/AppError');
 
 class JobService {
   /**
-   * Executa a sincronização global de todas as empresas com certificado ativo.
-   * Orquestra a busca na SEFAZ (NF-e), no ADN (NFS-e) e atualiza os Parceiros de Negócio.
+   * Inicia um novo registo de Job e dispara a execução em background
    */
-  async runSyncAll() {
-    logger.info('[JobService] Iniciando orquestração global de sincronização fiscal (SYNC_GLOBAL_FISCAL).');
+  async criarJobSincronizacao(tenant_id, empresa_id, tipo) {
+    const insertQuery = `
+      INSERT INTO jobs (tenant_id, nome_processo, status, payload, tentativas)
+      VALUES ($1, $2, $3, $4, 0)
+      RETURNING id, nome_processo, status, created_at;
+    `;
+
+    const payload = { empresa_id };
+    const result = await pool.query(insertQuery, [tenant_id, tipo, 'pendente', JSON.stringify(payload)]);
+    const job = result.rows[0];
+
+    this._executarWorker(job.id, tenant_id, empresa_id, tipo);
+
+    return job;
+  }
+
+  /**
+   * Tenta executar novamente um job que falhou
+   */
+  async reiniciarJob(tenant_id, job_id) {
+    const job = await this.obterJobPorId(tenant_id, job_id);
     
-    const jobId = await this._startLog('SYNC_GLOBAL_FISCAL');
-    const resultados = { nfe_salvas: 0, nfse_salvas: 0, parceiros_novos: 0, erros: [] };
+    if (!job) throw new AppError('Tarefa não encontrada.', 404);
+    if (job.status === 'processando') throw new AppError('A tarefa já está em execução.', 400);
+    if (job.status === 'concluido') throw new AppError('A tarefa já foi concluída com sucesso.', 400);
+
+    // Reinicia o status e incrementa as tentativas
+    await pool.query(
+      `UPDATE jobs SET status = 'pendente', tentativas = tentativas + 1, erro_mensagem = NULL, updated_at = NOW() 
+       WHERE id = $1 AND tenant_id = $2`,
+      [job_id, tenant_id]
+    );
+
+    // Dispara o worker novamente
+    this._executarWorker(job_id, tenant_id, job.payload.empresa_id, job.nome_processo);
+
+    return { message: 'Tarefa reiniciada com sucesso. A processar em background.' };
+  }
+
+  /**
+   * Cancela um job que está pendente ou bloqueado
+   */
+  async cancelarJob(tenant_id, job_id) {
+    const job = await this.obterJobPorId(tenant_id, job_id);
+    
+    if (!job) throw new AppError('Tarefa não encontrada.', 404);
+    if (['concluido', 'cancelado'].includes(job.status)) {
+      throw new AppError(`A tarefa não pode ser cancelada porque o seu estado atual é: ${job.status}.`, 400);
+    }
+
+    await pool.query(
+      `UPDATE jobs SET status = 'cancelado', erro_mensagem = 'Cancelado manualmente pelo utilizador.', updated_at = NOW() 
+       WHERE id = $1 AND tenant_id = $2`,
+      [job_id, tenant_id]
+    );
+
+    return { message: 'Tarefa cancelada com sucesso.' };
+  }
+
+  /**
+   * Obtém estatísticas rápidas para o topo do ecrã do Monitor
+   */
+  async obterEstatisticas(tenant_id) {
+    const query = `
+      SELECT status, COUNT(*) as quantidade
+      FROM jobs
+      WHERE tenant_id = $1 AND created_at >= NOW() - INTERVAL '7 days'
+      GROUP BY status;
+    `;
+    const result = await pool.query(query, [tenant_id]);
+    
+    const stats = { pendente: 0, processando: 0, concluido: 0, erro: 0, cancelado: 0 };
+    result.rows.forEach(row => {
+      if (stats[row.status] !== undefined) {
+        stats[row.status] = parseInt(row.quantidade);
+      }
+    });
+
+    return stats;
+  }
+
+  async listarJobs(tenant_id, pagina, limite, status_filtro) {
+    const offset = (pagina - 1) * limite;
+    
+    let whereClause = `WHERE tenant_id = $1`;
+    const params = [tenant_id];
+
+    if (status_filtro) {
+      whereClause += ` AND status = $2`;
+      params.push(status_filtro);
+    }
+
+    const countRes = await pool.query(`SELECT COUNT(*) FROM jobs ${whereClause}`, params);
+    const total = parseInt(countRes.rows[0].count);
+
+    const query = `
+      SELECT id, nome_processo, status, tentativas, erro_mensagem, resultado, created_at, updated_at
+      FROM jobs
+      ${whereClause}
+      ORDER BY created_at DESC
+      LIMIT $${params.length + 1} OFFSET $${params.length + 2}
+    `;
+
+    const result = await pool.query(query, [...params, limite, offset]);
+
+    return {
+      dados: result.rows,
+      metadados: { total, pagina, total_paginas: Math.ceil(total / limite) }
+    };
+  }
+
+  async obterJobPorId(tenant_id, id) {
+    const query = 'SELECT * FROM jobs WHERE id = $1 AND tenant_id = $2';
+    const result = await pool.query(query, [id, tenant_id]);
+    return result.rows[0] || null;
+  }
+
+  /**
+   * Worker Simulado (A lógica real de integração ficará aqui)
+   */
+  async _executarWorker(jobId, tenant_id, empresa_id, tipo) {
+    logger.info(`⚙️ [Job ${jobId}] A iniciar worker: ${tipo}`);
 
     try {
-      // Busca todas as empresas matrizes que possuem certificados ativos
-      const { rows: empresas } = await pool.query(`
-        SELECT e.id, e.cnpj, e.razao_social 
-        FROM empresas e 
-        JOIN certificados c ON c.empresa_id = e.id 
-        WHERE c.ativo = true AND e.is_filial = false
-      `);
+      await pool.query("UPDATE jobs SET status = 'processando', updated_at = NOW() WHERE id = $1", [jobId]);
 
-      if (empresas.length === 0) {
-        logger.info('[JobService] Nenhuma empresa com certificado ativo encontrada para sincronização.');
-        await this._finishLog(jobId, 'SUCCESS', { mensagem: 'Nenhum certificado ativo localizado.' });
-        return resultados;
+      // Simulação de processamento demorado
+      await new Promise(resolve => setTimeout(resolve, 3000)); 
+
+      // 15% de probabilidade de simular uma falha na SEFAZ para testar o botão "Retry" no monitor
+      if (Math.random() < 0.15) {
+        throw new Error('Timeout na comunicação com os servidores da SEFAZ.');
       }
 
-      for (const empresa of empresas) {
-        logger.info(`[JobService] A processar entidade: ${empresa.razao_social} (${empresa.cnpj})`);
-        
-        // 1. Sincronização de NF-e (Mercadorias / SEFAZ)
-        try {
-          const resNFe = await nfeService.sincronizarComSefaz(empresa.id);
-          resultados.nfe_salvas += (resNFe.docs || 0);
-        } catch (err) {
-          logger.error(`[JobService] Erro NF-e na empresa ${empresa.cnpj}: ${err.message}`);
-          resultados.erros.push({ modulo: 'NFE', empresa: empresa.razao_social, erro: err.message });
-        }
+      const resultado = {
+        notas_encontradas: Math.floor(Math.random() * 50),
+        mensagem: "Processamento concluído."
+      };
 
-        // 2. Sincronização de NFS-e (Serviços / ADN Nacional)
-        try {
-          const resNFSe = await nfseService.sincronizarADN(empresa.id);
-          resultados.nfse_salvas += (resNFSe.count || 0);
-        } catch (err) {
-          logger.error(`[JobService] Erro NFS-e na empresa ${empresa.cnpj}: ${err.message}`);
-          resultados.erros.push({ modulo: 'NFSE', empresa: empresa.razao_social, erro: err.message });
-        }
-
-        // 3. Extração e Auditoria de Parceiros (Clientes/Fornecedores) via BrasilAPI
-        try {
-          const resParceiros = await parceirosService.syncFromXmls(empresa.id);
-          resultados.parceiros_novos += (resParceiros.novos || 0);
-        } catch (err) {
-          logger.error(`[JobService] Erro de Parceiros na empresa ${empresa.cnpj}: ${err.message}`);
-          resultados.erros.push({ modulo: 'PARCEIROS', empresa: empresa.razao_social, erro: err.message });
-        }
-      }
-
-      const statusFinal = resultados.erros.length > 0 ? 'PARTIAL_SUCCESS' : 'SUCCESS';
-      await this._finishLog(jobId, statusFinal, resultados);
-      
-      logger.info(`[JobService] Orquestração global concluída. NF-e: ${resultados.nfe_salvas} | NFS-e: ${resultados.nfse_salvas} | Parceiros: ${resultados.parceiros_novos}`);
-      
-      return resultados;
+      await pool.query(
+        "UPDATE jobs SET status = 'concluido', resultado = $1, updated_at = NOW() WHERE id = $2",
+        [JSON.stringify(resultado), jobId]
+      );
+      logger.info(`✅ [Job ${jobId}] Concluído com sucesso.`);
 
     } catch (error) {
-      logger.error(`[JobService] ❌ Erro FATAL no orquestrador: ${error.message}`);
-      await this._finishLog(jobId, 'FAILED', { erro_fatal: error.message, stack: error.stack });
-      throw error;
-    }
-  }
-
-  async _startLog(name) {
-    try {
-      const res = await pool.query(
-        'INSERT INTO job_logs (job_name, status) VALUES ($1, $2) RETURNING id',
-        [name, 'RUNNING']
-      );
-      return res.rows[0].id;
-    } catch (err) {
-      logger.error(`[JobService] Falha ao iniciar log de auditoria: ${err.message}`);
-      return null; 
-    }
-  }
-
-  async _finishLog(id, status, detalhes) {
-    if (!id) return;
-    try {
+      logger.error(`❌ [Job ${jobId}] Erro: ${error.message}`);
       await pool.query(
-        'UPDATE job_logs SET status = $1, detalhes = $2, finished_at = CURRENT_TIMESTAMP WHERE id = $3',
-        [status, JSON.stringify(detalhes), id]
+        "UPDATE jobs SET status = 'erro', erro_mensagem = $1, updated_at = NOW() WHERE id = $2",
+        [error.message, jobId]
       );
-    } catch (err) {
-      logger.error(`[JobService] Falha ao concluir log de auditoria: ${err.message}`);
     }
   }
 }

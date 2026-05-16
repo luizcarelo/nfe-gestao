@@ -1,41 +1,26 @@
-// Ficheiro: backend/src/modules/empresas/routes/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/empresas/routes/index.js
+ * Rotas da API para a Gestão de Empresas do Cliente
+ */
 const { Router } = require('express');
-const multer = require('multer');
-const controller = require('../controller');
+const empresaController = require('../controller');
 
-const routes = Router();
+const empresaRoutes = Router();
 
-// Configuração do Multer para processar o Certificado A1 diretamente em Memória RAM.
-// Impede a gravação de arquivos temporários no disco e aumenta a segurança.
-const upload = multer({ 
-    storage: multer.memoryStorage(),
-    limits: { fileSize: 10 * 1024 * 1024 } // Limite de 10MB para o certificado (.pfx ou .p12)
-});
+// Listar todas as empresas do Tenant
+// Ex: GET /v1/empresas
+empresaRoutes.get('/', empresaController.listar);
 
-// ==========================================
-// GESTÃO DE MATRIZES E CADASTRO (RFB + SEFAZ)
-// ==========================================
-routes.get('/', (req, res) => controller.index(req, res));
+// Cadastrar nova empresa (Valida limite de quota SaaS)
+// Ex: POST /v1/empresas
+empresaRoutes.post('/', empresaController.cadastrar);
 
-// A rota lookup aceita opcionalmente ?matrizId=xxx no query params para invocar o CCC da SEFAZ via A1
-routes.get('/lookup/:cnpj', (req, res) => controller.lookup(req, res));
+// Detalhes de uma empresa específica
+// Ex: GET /v1/empresas/1
+empresaRoutes.get('/:id', empresaController.detalhar);
 
-routes.post('/', (req, res) => controller.store(req, res));
-routes.put('/:id', (req, res) => controller.update(req, res));
+// Upload e Configuração do Certificado Digital A1
+// Ex: POST /v1/empresas/1/certificado
+empresaRoutes.post('/:id/certificado', empresaController.configurarCertificado);
 
-// ==========================================
-// GESTÃO DE SEGURANÇA (CUSTÓDIA DO CERTIFICADO A1)
-// ==========================================
-routes.post('/:id/certificado', upload.single('certificado'), (req, res) => controller.uploadCertificado(req, res));
-
-// ==========================================
-// GESTÃO DE FILIAIS E COMPLIANCE TRIBUTÁRIO (IA)
-// ==========================================
-routes.get('/:matrizId/filiais', (req, res) => controller.listFiliais(req, res));
-routes.post('/:matrizId/filiais', (req, res) => controller.storeFilial(req, res));
-
-// Endpoint exclusivo que aciona o LLM (Gemini) para análise da estrutura societária Matriz-Filial
-routes.get('/:matrizId/analise-ia', (req, res) => controller.analiseEstruturaIa(req, res));
-
-module.exports = routes;
+module.exports = empresaRoutes;

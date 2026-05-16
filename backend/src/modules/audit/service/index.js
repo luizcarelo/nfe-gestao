@@ -1,47 +1,133 @@
-// Ficheiro: backend/src/modules/audit/service/index.js
-
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/audit/service/index.js
+ * Serviço de Auditoria de Sistema (Security Audit Logs)
+ * Regista e lista as ações dos utilizadores de forma imutável e isolada por Tenant.
+ */
 const { pool } = require('../../../config/database');
 const { logger } = require('../../../infra/logger');
 
 class AuditService {
   /**
-   * Recupera a trilha de auditoria sistémica a partir dos logs de orquestração.
-   * Transforma os dados brutos num formato de Compliance para o Frontend.
+   * Regista uma nova ação no log de auditoria.
+   * NOTA: Este método é geralmente chamado internamente por outros serviços ou middlewares,
+   * e não diretamente por uma rota HTTP pública.
    */
-  async getSystemLogs(limit = 100) {
+  async registrarLog(dadosLog) {
+    const { 
+      tenant_id, 
+      user_id, 
+      acao, 
+      entidade, 
+      entidade_id, 
+      dados_anteriores = null, 
+      dados_novos = null, 
+      ip_address = null 
+    } = dadosLog;
+
+    const query = `
+      INSERT INTO audit_logs (
+        tenant_id, user_id, acao, entidade, entidade_id, 
+        dados_anteriores, dados_novos, ip_address
+      )
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+      RETURNING id;
+    `;
+
+    const values = [
+      tenant_id, 
+      user_id, 
+      acao, 
+      entidade, 
+      entidade_id, 
+      dados_anteriores ? JSON.stringify(dados_anteriores) : null, 
+      dados_novos ? JSON.stringify(dados_novos) : null, 
+      ip_address
+    ];
+
     try {
-      const { rows } = await pool.query(`
-        SELECT 
-          id, 
-          started_at as date, 
-          CASE 
-            WHEN job_name = 'SYNC_GLOBAL_FISCAL' THEN 'Sincronização Fiscal Distribuída'
-            ELSE 'Tarefa Automática: ' || job_name 
-          END as action, 
-          'Orquestrador Backend' as user, 
-          'internal-network' as ip,
-          status,
-          detalhes
-        FROM job_logs 
-        ORDER BY started_at DESC 
-        LIMIT $1
-      `, [limit]);
-      
-      return rows;
+      await pool.query(query, values);
+      // Não bloqueiaremos o fluxo principal em caso de sucesso silencioso
     } catch (error) {
-      logger.error(`[AuditService] Falha ao recuperar logs do banco de dados: ${error.message}`);
-      throw error;
+      // Se falhar o registo do log, não deitamos o sistema abaixo, mas registamos criticamente
+      logger.error(`[Security] Falha ao gravar log de auditoria para Tenant ${tenant_id}: ${error.message}`);
     }
   }
 
   /**
-   * MÉTODO STUB: Preparado para futura implementação de Autenticação (JWT).
-   * Registará quem fez o quê, quando e de onde (Event Sourcing).
+   * Lista os logs de auditoria do Tenant com paginação e filtros.
    */
-  async registerUserAction(action, userEmail, ipAddress, details = {}) {
-    logger.info(`[AUDIT] Ação: ${action} | Utilizador: ${userEmail} | IP: ${ipAddress}`);
-    // Futura inserção numa tabela 'audit_events'
-    // await pool.query('INSERT INTO audit_events (action, user_email, ip, details) VALUES ($1, $2, $3, $4)', [...]);
+  async listarLogs(tenant_id, filtros, pagina = 1, limite = 50) {
+    const offset = (pagina - 1) * limite;
+    const { user_id, acao, entidade, data_inicio, data_fim } = filtros;
+
+    let whereClause = `WHERE a.tenant_id = $1`;
+    const params = [tenant_id];
+    let paramIndex = 2;
+
+    if (user_id) {
+      whereClause += ` AND a.user_id = $${paramIndex}`;
+      params.push(user_id);
+      paramIndex++;
+    }
+
+    if (acao) {
+      whereClause += ` AND a.acao = $${paramIndex}`;
+      params.push(acao);
+      paramIndex++;
+    }
+
+    if (entidade) {
+      whereClause += ` AND a.entidade = $${paramIndex}`;
+      params.push(entidade);
+      paramIndex++;
+    }
+
+    if (data_inicio && data_fim) {
+      whereClause += ` AND a.created_at BETWEEN $${paramIndex} AND $${paramIndex + 1}`;
+      params.push(data_inicio, data_fim);
+      paramIndex += 2;
+    }
+
+    // Contagem Total para Paginação
+    const countRes = await pool.query(`SELECT COUNT(*) FROM audit_logs a ${whereClause}`, params);
+    const total = parseInt(countRes.rows[0].count);
+
+    // Consulta de Dados (com JOIN para obter o nome/email do utilizador)
+    const query = `
+      SELECT a.id, a.acao, a.entidade, a.entidade_id, a.ip_address, a.created_at,
+             u.nome as utilizador_nome, u.email as utilizador_email
+      FROM audit_logs a
+      LEFT JOIN users u ON a.user_id = u.id
+      ${whereClause}
+      ORDER BY a.created_at DESC
+      LIMIT $${paramIndex} OFFSET $${paramIndex + 1}
+    `;
+
+    const result = await pool.query(query, [...params, limite, offset]);
+
+    return {
+      dados: result.rows,
+      metadados: { 
+        total, 
+        pagina, 
+        total_paginas: Math.ceil(total / limite),
+        limite 
+      }
+    };
+  }
+
+  /**
+   * Obtém os detalhes completos de um log específico (útil para ver o JSON de "dados_anteriores" e "dados_novos")
+   */
+  async obterDetalhes(tenant_id, id) {
+    const query = `
+      SELECT a.*, u.nome as utilizador_nome, u.email as utilizador_email
+      FROM audit_logs a
+      LEFT JOIN users u ON a.user_id = u.id
+      WHERE a.id = $1 AND a.tenant_id = $2
+    `;
+    const result = await pool.query(query, [id, tenant_id]);
+    return result.rows[0] || null;
   }
 }
 

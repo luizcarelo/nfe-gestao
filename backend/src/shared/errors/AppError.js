@@ -1,18 +1,13 @@
-// Ficheiro: /home/engeradios/nfe-gestao/backend/src/shared/errors/AppError.js
-
 /**
- * Classe customizada para tratamento de erros operacionais.
- * Permite que o sistema diferencie erros de negócio de falhas inesperadas.
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/shared/errors/AppError.js
+ * Classe centralizada para tratamento de erros de negócio da aplicação.
  */
-class AppError extends Error {
+class AppError {
   constructor(message, statusCode = 400) {
-    super(message);
     this.message = message;
     this.statusCode = statusCode;
-    this.isOperational = true;
-
-    Error.captureStackTrace(this, this.constructor);
   }
 }
 
-module.exports = { AppError };
+// IMPORTANTE: Exportação direta da classe. Não usar chaves { AppError }
+module.exports = AppError;

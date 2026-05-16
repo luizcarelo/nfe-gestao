@@ -1,77 +1,83 @@
-// Ficheiro: /home/engeradios/nfe-gestao/backend/src/modules/dashboard/controller/index.js
-
-const { pool } = require('../../../config/database');
-const { logger } = require('../../../infra/logger');
-const { XMLParser } = require('fast-xml-parser');
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/dashboard/controller/index.js
+ * Controlador do Dashboard - Arquitetura SaaS Profissional
+ * Responsável por consolidar métricas, gráficos e resumos fiscais para o Tenant.
+ */
+const dashboardService = require('../service');
+const AppError = require('../../../shared/errors/AppError');
 
 class DashboardController {
+  
+  /**
+   * Equivalente ao seu método "index" antigo.
+   * Retorna o resumo consolidado: Receita Bruta, Impostos Detalhados (ICMS, IPI, PIS, COFINS, ISS),
+   * Notas Canceladas e Atividades Recentes (Jobs), respeitando o isolamento do Tenant.
+   */
   async index(req, res) {
-    try {
-      // 1. Buscar os XMLs autorizados de NF-e para extração profunda
-      const { rows: nfeRows } = await pool.query(`SELECT xml_bruto FROM documentos_fiscais WHERE status_documento != 'CANCELADA' AND xml_bruto IS NOT NULL`);
-      
-      const parser = new XMLParser({ ignoreAttributes: false, tagNameProcessors: [name => name.replace(/.*:/, '')] });
-      
-      let nfeStats = { total: 0, icms: 0, ipi: 0, pis: 0, cofins: 0, qtd: nfeRows.length };
+    const { tenant_id } = req.user;
+    const { periodo_inicio, periodo_fim, empresa_id } = req.query;
 
-      nfeRows.forEach(row => {
-        try {
-          const xml = parser.parse(row.xml_bruto);
-          const infNFe = xml.nfeProc ? xml.nfeProc.NFe?.infNFe : xml.NFe?.infNFe;
-          
-          if (infNFe && infNFe.total && infNFe.total.ICMSTot) {
-            const tot = infNFe.total.ICMSTot;
-            nfeStats.total += parseFloat(tot.vNF || 0);
-            nfeStats.icms += parseFloat(tot.vICMS || 0);
-            nfeStats.ipi += parseFloat(tot.vIPI || 0);
-            nfeStats.pis += parseFloat(tot.vPIS || 0);
-            nfeStats.cofins += parseFloat(tot.vCOFINS || 0);
-          }
-        } catch (e) { /* Ignora falhas de parse em notas isoladas */ }
+    // O serviço executará de forma otimizada as somas de impostos (NFe e NFSe) 
+    // e buscará os últimos Jobs, substituindo os antigos SELECTs diretos e 
+    // evitando o parse de XML em tempo real no controlador.
+    const metricas = await dashboardService.obterMetricasCompletas(tenant_id, {
+        periodo_inicio,
+        periodo_fim,
+        empresa_id
+    });
+
+    /**
+     * O objeto 'metricas' retornado pelo serviço manterá a estrutura original:
+     * {
+     * receitaBruta: 0,
+     * impostosDetalhados: { icms, ipi, pis, cofins, iss, retencoesFederais },
+     * impostosApurados: 0,
+     * notasCanceladas: 0,
+     * totalDocs: 0,
+     * atividades: [ { id, tipo, desc, tempo, status } ]
+     * }
+     */
+    return res.status(200).json({
+      success: true,
+      data: metricas
+    });
+  }
+
+  /**
+   * Retorna dados formatados para os gráficos de faturamento e despesas ao longo do tempo.
+   * (Nova funcionalidade SaaS)
+   */
+  async obterEvolucaoFinanceira(req, res) {
+      const { tenant_id } = req.user;
+      const { ano, empresa_id } = req.query;
+
+      if (!ano) {
+          throw new AppError('O parâmetro "ano" é obrigatório para o gráfico de evolução.', 400);
+      }
+
+      const evolucao = await dashboardService.gerarEvolucaoFinanceira(tenant_id, parseInt(ano), empresa_id);
+
+      return res.status(200).json({
+          success: true,
+          data: evolucao
       });
+  }
 
-      // 2. Dados da NFS-e Nacional
-      const { rows: nfseRows } = await pool.query(`SELECT valor_servicos, valor_iss, valor_pis, valor_cofins, valor_inss, valor_ir, valor_csll, status_nfse FROM nfse_documentos WHERE fluxo = 'PRESTADO'`);
-      
-      let nfseStats = { total: 0, iss: 0, retencoes: 0, canceladas: 0, qtd: nfseRows.length };
-      nfseRows.forEach(row => {
-        if (row.status_nfse === 'CANCELADA') {
-          nfseStats.canceladas++;
-        } else {
-          nfseStats.total += parseFloat(row.valor_servicos || 0);
-          nfseStats.iss += parseFloat(row.valor_iss || 0);
-          nfseStats.retencoes += parseFloat(row.valor_pis || 0) + parseFloat(row.valor_cofins || 0) + parseFloat(row.valor_inss || 0) + parseFloat(row.valor_ir || 0) + parseFloat(row.valor_csll || 0);
-        }
+  /**
+   * Retorna os alertas da auditoria fiscal inteligente para exibir na página inicial.
+   * Ex: "Fornecedor Inapto", "Divergência de ICMS", etc.
+   * (Nova funcionalidade SaaS Oceano Azul)
+   */
+  async obterAlertasFiscais(req, res) {
+      const { tenant_id } = req.user;
+      const { empresa_id, limite = 10 } = req.query;
+
+      const alertas = await dashboardService.obterUltimosAlertasFiscais(tenant_id, empresa_id, parseInt(limite));
+
+      return res.status(200).json({
+          success: true,
+          data: alertas
       });
-
-      // 3. Atividades Recentes
-      const { rows: atividadesRes } = await pool.query(`SELECT id, job_name as tipo, status, started_at as tempo, detalhes FROM job_logs ORDER BY started_at DESC LIMIT 4`);
-
-      const metricas = {
-        receitaBruta: nfeStats.total + nfseStats.total,
-        impostosDetalhados: {
-          icms: nfeStats.icms,
-          ipi: nfeStats.ipi,
-          pis: nfeStats.pis,
-          cofins: nfeStats.cofins,
-          iss: nfseStats.iss,
-          retencoesFederais: nfseStats.retencoes
-        },
-        impostosApurados: nfeStats.icms + nfeStats.pis + nfeStats.cofins + nfseStats.iss,
-        notasCanceladas: nfseStats.canceladas, // Pode adicionar NFe aqui também
-        totalDocs: nfeStats.qtd + nfseStats.qtd,
-        atividades: atividadesRes.map(job => ({
-          id: job.id, tipo: job.tipo,
-          desc: job.tipo === 'SYNC_GLOBAL_FISCAL' ? 'Sincronização Global da Empresa' : `Processamento: ${job.tipo}`,
-          tempo: job.tempo, status: job.status
-        }))
-      };
-
-      return res.json({ success: true, data: metricas });
-    } catch (error) {
-      logger.error(`Erro ao carregar Dashboard Analytics: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Erro interno ao processar XMLs.' });
-    }
   }
 }
 

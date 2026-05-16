@@ -1,2 +1,541 @@
 {"level":"info","message":"🐘 Conectando ao PostgreSQL 18 para execução do Setup...","service":"erp-fiscal-backend","timestamp":"2026-05-15 20:22:53"}
 {"level":"info","message":"✅ Estrutura do Banco de Dados e Regras criadas com sucesso!","service":"erp-fiscal-backend","timestamp":"2026-05-15 20:22:53"}
+{"level":"info","message":"🏢 [SaaS] Conectando ao PostgreSQL 18 para implementação da Arquitetura Multi-Tenant...","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:10:40"}
+{"level":"info","message":"✅ [SaaS] Base de dados reconstruída com sucesso para Multi-Tenant!","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:10:40"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:33:00"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:33:00"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:36:58"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:36:58"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:01"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:01"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:12"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:12"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:24"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:24"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:39"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:40:39"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:41:58"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:41:58"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:42:06"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:42:06"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:42:15"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:42:15"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:14"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:14"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:18"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:18"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:33"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:33"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:39"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:48:39"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:21"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:21"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:36"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:36"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:43"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:43"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:45"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:45"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:55"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:50:55"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:51:01"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:51:01"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:51:15"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:51:15"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:07"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:07"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:17"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:17"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:27"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:56:27"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:59:54"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:59:54"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:59:59"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 21:59:59"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:10"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:10"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:25"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:25"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:40"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:17:40"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:22"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:22"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:40"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:40"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:58"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:19:58"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:17"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:17"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:24"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:24"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:32"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:21:32"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:22:38"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:22:38"}
+{"level":"info","message":"🏢 [SaaS] Conectando ao PostgreSQL 18 para implementação da Arquitetura Multi-Tenant...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:22:44"}
+{"level":"info","message":"✅ [SaaS] Base de dados reconstruída com sucesso para Multi-Tenant!","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:22:44"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:24:37"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:24:37"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:24:43"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:24:43"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:21"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:21"}
+{"level":"info","message":"POST /v1/auth/login - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"level":"info","message":"GET /v1/parceiros/api/cnpj/19131243000197 - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"level":"info","message":"POST /v1/parceiros - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:25:23"}
+{"body":{"cnpj":"19131243000197"},"level":"error","message":"[HTTP ERROR] POST /v1/parceiros - Status: 500 - Msg: AppError is not a constructor","params":{},"service":"erp-fiscal-backend","stack":"TypeError: AppError is not a constructor\n    at ParceiroService.salvarParceiro (/home/luizcarelo/nfe-gestao/backend/src/modules/parceiros/service/index.js:72:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async cadastrar (/home/luizcarelo/nfe-gestao/backend/src/modules/parceiros/controller/index.js:44:22)","timestamp":"2026-05-15 22:25:23"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:34"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:34"}
+{"level":"info","message":"POST /v1/auth/login - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"info","message":"GET /v1/parceiros/api/cnpj/19131243000197 - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"info","message":"POST /v1/parceiros - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"body":{"cnpj":"19131243000197"},"level":"error","message":"[HTTP ERROR] POST /v1/parceiros - Status: 500 - Msg: Erro ao persistir dados do parceiro.","params":{},"service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:51"}
+{"level":"info","message":"POST /v1/auth/login - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"info","message":"GET /v1/parceiros/api/cnpj/19131243000197 - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"info","message":"POST /v1/parceiros - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"body":{"cnpj":"19131243000197"},"level":"error","message":"[HTTP ERROR] POST /v1/parceiros - Status: 500 - Msg: Erro ao persistir dados do parceiro.","params":{},"service":"erp-fiscal-backend","timestamp":"2026-05-15 22:27:59"}
+{"level":"info","message":"POST /v1/auth/login - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"info","message":"GET /v1/parceiros/api/cnpj/19131243000197 - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"info","message":"POST /v1/parceiros - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"body":{"cnpj":"19131243000197"},"level":"error","message":"[HTTP ERROR] POST /v1/parceiros - Status: 500 - Msg: Erro ao persistir dados do parceiro.","params":{},"service":"erp-fiscal-backend","timestamp":"2026-05-15 22:28:13"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:16"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:16"}
+{"level":"info","message":"POST /v1/auth/login - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"info","message":"GET /v1/parceiros/api/cnpj/19131243000197 - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"info","message":"POST /v1/parceiros - IP: ::ffff:127.0.0.1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"body":{"cnpj":"19131243000197"},"level":"error","message":"[HTTP ERROR] POST /v1/parceiros - Status: 500 - Msg: Erro ao persistir dados do parceiro.","params":{},"service":"erp-fiscal-backend","timestamp":"2026-05-15 22:30:19"}
+{"level":"info","message":"🏢 [SaaS] Conectando ao PostgreSQL 18 para implementação da Arquitetura Multi-Tenant...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:32:01"}
+{"level":"info","message":"✅ [SaaS] Base de dados reconstruída com sucesso para Multi-Tenant!","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:32:01"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:32:24"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:32:24"}
+{"level":"info","message":"🐘 Ligação ao PostgreSQL estabelecida com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:43"}
+{"level":"info","message":"🚀 ERP Fiscal em execução na porta 3333 [Ambiente: development]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:43"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:52"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:52"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:53"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:53"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:53"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:53"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:53"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:54"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:54"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: TypeError: Cannot destructure property 'tenant_id' of 'req.user' as it is undefined.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:54"}
+{"level":"error","message":"TypeError: Cannot destructure property 'tenant_id' of 'req.user' as it is undefined.\n    at cadastrar (/home/luizcarelo/nfe-gestao/backend/src/modules/parceiros/controller/index.js:39:13)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at /home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:284:15\n    at router.process_params (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:280:10)\n    at router.handle (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:175:3)\n    at router (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:47:12)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:36:54"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:03"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:03"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:03"}
+{"level":"info","message":"✅ Servidor HTTP encerrado com segurança.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:07"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:14"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:14"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:18"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:18"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:18"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:18"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:18"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:19"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:19"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: TypeError: Cannot destructure property 'tenant_id' of 'req.user' as it is undefined.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:19"}
+{"level":"error","message":"TypeError: Cannot destructure property 'tenant_id' of 'req.user' as it is undefined.\n    at cadastrar (/home/luizcarelo/nfe-gestao/backend/src/modules/parceiros/controller/index.js:39:13)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at /home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:284:15\n    at router.process_params (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:280:10)\n    at router.handle (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:175:3)\n    at router (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:47:12)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:37:19"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:11"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:11"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:14"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:56"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:38:56"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:04"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:04"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"error","message":"[Service] Erro no Upsert do Parceiro: null value in column \"nome\" of relation \"parceiros\" violates not-null constraint","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:39:14"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:34"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:34"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:47"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:47"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:56"}
+{"level":"error","message":"❌ Erro Cosmos (GTIN): Request failed with status code 429","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"error","message":"[App Error Middleware] Msg: Falha ao consultar catálogo de produtos.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"🏢 Empresa 19131243000197 cadastrada com sucesso para o Tenant 1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide>\\n            <nNF>123</nNF>\\n            <serie>1</serie>\\n            <dhEmi>2023-10-01T12:00:00-03:00</dhEmi>\\n            <tpNF>1</tpNF>\\n          </ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste GTIN</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: TypeError: nfeParser.parse is not a function","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"error","message":"TypeError: nfeParser.parse is not a function\n    at NFeService.processarUploadXML (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/service/index.js:18:32)\n    at uploadXml (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/controller/index.js:28:37)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at /home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:284:15\n    at router.process_params (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:280:10)\n    at router.handle (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:175:3)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:43:57"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:13"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"error","message":"❌ Erro Cosmos (GTIN): Request failed with status code 429","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"error","message":"[App Error Middleware] Msg: Falha ao consultar catálogo de produtos.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:14"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:39"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:39"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:39"}
+{"level":"info","message":"✅ Servidor HTTP encerrado com segurança.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:41"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:45"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:45"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:48"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:45:49"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:23"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:23"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:25"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide>\\n            <nNF>123</nNF>\\n            <serie>1</serie>\\n            <dhEmi>2023-10-01T12:00:00-03:00</dhEmi>\\n            <tpNF>1</tpNF>\\n          </ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste GTIN</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: TypeError: nfeParser.parse is not a function","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"error","message":"TypeError: nfeParser.parse is not a function\n    at NFeService.processarUploadXML (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/service/index.js:18:32)\n    at uploadXml (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/controller/index.js:28:37)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at /home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:284:15\n    at router.process_params (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:280:10)\n    at router.handle (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:175:3)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:47:26"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:42"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:42"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:51"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:51"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:55"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:57"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:48:57"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:01"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide>\\n            <nNF>123</nNF>\\n            <serie>1</serie>\\n            <dhEmi>2023-10-01T12:00:00-03:00</dhEmi>\\n            <tpNF>1</tpNF>\\n          </ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste GTIN</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: TypeError: nfeParser.parse is not a function","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"error","message":"TypeError: nfeParser.parse is not a function\n    at NFeService.processarUploadXML (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/service/index.js:18:32)\n    at uploadXml (/home/luizcarelo/nfe-gestao/backend/src/modules/nfe/controller/index.js:28:37)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/layer.js:95:5)\n    at /home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:284:15\n    at router.process_params (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:346:12)\n    at next (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:280:10)\n    at router.handle (/home/luizcarelo/nfe-gestao/backend/node_modules/express/lib/router/index.js:175:3)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:49:02"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:51:52"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:51:52"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:08"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:08"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:19"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:19"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:21"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:21"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] GET /v1/parceiros/api/cnpj/19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] GET /v1/produtos/api/gtin/7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"📦 Consultando Cosmos para GTIN: 7891000315507","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"PRODUTO TESTE SCRIPT\",\"marca\":\"MARCA TESTE\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide>\\n            <nNF>123</nNF>\\n            <serie>1</serie>\\n            <dhEmi>2023-10-01T12:00:00-03:00</dhEmi>\\n            <tpNF>1</tpNF>\\n          </ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste GTIN</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"🧾 NFe 123 importada. (Tenant: 1, Empresa: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] POST /v1/jobs/sync","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP Body] {\"tipo\":\"sync_nfe\",\"empresa_id\":1}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"⚙️ [Job 1] A iniciar worker: sync_nfe","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"[HTTP] GET /v1/audit","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:22"}
+{"level":"info","message":"✅ [Job 1] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:52:25"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:55:58"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:55:58"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"TESTE SCRIPT\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/empresas/1/certificado","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"arquivo_pfx_base64\":\"TU9DS19DRVJUSUZJQ0FETw==\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"🔐 Certificado A1 configurado para a Empresa ID 1 (Tenant 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide><nNF>123</nNF><serie>1</serie><dhEmi>2023-10-01T12:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta NFe já se encontra importada na sua base de dados.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/nfe?empresa_id=1","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/auditar","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"Auditoria Fiscal concluída para a NFe 123. Alertas encontrados: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/manifestar","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"tipo_manifestacao\":\"ciencia\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"Manifestação 'ciencia' registada para a NFe 35231019131243000197550010000001231000001234.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/nfse/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <NFSe>\\n      <infNFSe>\\n        <nNF>999</nNF>\\n        <cVerif>ABC123XYZ</cVerif>\\n        <dhEmi>2023-10-02T15:00:00</dhEmi>\\n        <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Prestadora</xNome></emit>\\n        <dest><CNPJ>00000000000000</CNPJ><xNome>Tomador Teste</xNome></dest>\\n        <serv><vServ>500.00</vServ><vISS>25.00</vISS><xDescServ>Desenvolvimento SaaS</xDescServ></serv>\\n      </infNFSe>\\n    </NFSe>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"✅ NFSe Nacional 999 gravada com sucesso (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard/evolucao?ano=2023","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard/alertas","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] POST /v1/jobs/sync","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP Body] {\"tipo\":\"sync_nfse\",\"empresa_id\":1}","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"⚙️ [Job 2] A iniciar worker: sync_nfse","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"[HTTP] GET /v1/jobs/stats","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:01"}
+{"level":"info","message":"✅ [Job 2] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:56:04"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:57:59"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:57:59"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:03"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:03"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:19"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:19"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:26"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:26"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:35"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:35"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:40"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:40"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:47"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 22:58:47"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:03:11"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:03:11"}
+{"level":"info","message":"⏰ [CronManager] Inicializando agendador de tarefas em background...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:03:11"}
+{"level":"info","message":"⏰ [CronManager] Sincronização SEFAZ agendada para rodar a cada hora.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:03:11"}
+{"level":"warn","message":"⚠️ [Aviso] Módulo de Workers não encontrado. O motor de captura SEFAZ não será iniciado.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:04:57"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:04:57"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:04:57"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"TESTE SCRIPT\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/empresas/1/certificado","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"arquivo_pfx_base64\":\"TU9DS19DRVJUSUZJQ0FETw==\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"🔐 Certificado A1 configurado para a Empresa ID 1 (Tenant 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide><nNF>123</nNF><serie>1</serie><dhEmi>2023-10-01T12:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta NFe já se encontra importada na sua base de dados.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] GET /v1/nfe?empresa_id=1","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/auditar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"Auditoria Fiscal concluída para a NFe 123. Alertas encontrados: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/manifestar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"tipo_manifestacao\":\"ciencia\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"Manifestação 'ciencia' registada para a NFe 35231019131243000197550010000001231000001234.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP] POST /v1/nfse/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <NFSe>\\n      <infNFSe>\\n        <nNF>999</nNF>\\n        <cVerif>ABC123XYZ</cVerif>\\n        <dhEmi>2023-10-02T15:00:00</dhEmi>\\n        <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Prestadora</xNome></emit>\\n        <dest><CNPJ>00000000000000</CNPJ><xNome>Tomador Teste</xNome></dest>\\n        <serv><vServ>500.00</vServ><vISS>25.00</vISS><xDescServ>Desenvolvimento SaaS</xDescServ></serv>\\n      </infNFSe>\\n    </NFSe>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:07"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:36"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:36"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:36"}
+{"level":"info","message":"✅ Servidor HTTP encerrado com segurança.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:41"}
+{"level":"warn","message":"⚠️ [Aviso] Módulo de Workers não encontrado. O motor de captura SEFAZ não será iniciado.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:44"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:44"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:05:44"}
+{"level":"warn","message":"⚠️ [Aviso] Módulo de Workers não encontrado. O motor de captura SEFAZ não será iniciado.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:01"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:01"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:01"}
+{"level":"warn","message":"⚠️ [Aviso] Módulo de Workers não encontrado. O motor de captura SEFAZ não será iniciado.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:17"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:17"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:17"}
+{"level":"info","message":"🛑 Sinal de encerramento recebido. A fechar conexões de rede...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:22"}
+{"level":"warn","message":"⚠️ [Aviso] Módulo de Workers não encontrado. O motor de captura SEFAZ não será iniciado.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:25"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:25"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:07:25"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:08:57"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:08:57"}
+{"level":"info","message":"⏰ [CronManager] Inicializando agendador de tarefas em background...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:08:57"}
+{"level":"info","message":"⏰ [CronManager] Sincronização SEFAZ agendada para rodar a cada hora.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:08:57"}
+{"level":"info","message":"🚀 Servidor NFe SaaS rodando na porta 3333","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:09"}
+{"level":"info","message":"🌍 Ambiente: development","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:09"}
+{"level":"info","message":"⏰ [CronManager] Inicializando agendador de tarefas em background...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:09"}
+{"level":"info","message":"⏰ [CronManager] Sincronização SEFAZ agendada para rodar a cada 1 minuto.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:09"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"TESTE SCRIPT\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/empresas/1/certificado","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"arquivo_pfx_base64\":\"TU9DS19DRVJUSUZJQ0FETw==\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"🔐 Certificado A1 configurado para a Empresa ID 1 (Tenant 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide><nNF>123</nNF><serie>1</serie><dhEmi>2023-10-01T12:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta NFe já se encontra importada na sua base de dados.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] GET /v1/nfe?empresa_id=1","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/auditar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"Auditoria Fiscal concluída para a NFe 123. Alertas encontrados: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/1/manifestar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"tipo_manifestacao\":\"ciencia\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"Manifestação 'ciencia' registada para a NFe 35231019131243000197550010000001231000001234.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP] POST /v1/nfse/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <NFSe>\\n      <infNFSe>\\n        <nNF>999</nNF>\\n        <cVerif>ABC123XYZ</cVerif>\\n        <dhEmi>2023-10-02T15:00:00</dhEmi>\\n        <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Prestadora</xNome></emit>\\n        <dest><CNPJ>00000000000000</CNPJ><xNome>Tomador Teste</xNome></dest>\\n        <serv><vServ>500.00</vServ><vISS>25.00</vISS><xDescServ>Desenvolvimento SaaS</xDescServ></serv>\\n      </infNFSe>\\n    </NFSe>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"error","message":"🔥 [Unhandled Rejection] Promessa rejeitada não tratada: [object Object]","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:09:35"}
+{"level":"info","message":"⏰ [CronManager] Disparando rotina de Sincronização SEFAZ...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] A iniciar rotina global de captura de XMLs...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] 1 empresas elegíveis para sincronização.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"⚙️ [Job 3] A iniciar worker: sync_nfe_sefaz","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"   🔄 [Job 3] Sincronizando: OPEN KNOWLEDGE BRASIL (CNPJ: 19131243000197)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"🌐 [SEFAZ Provider] A iniciar comunicação segura com a SEFAZ para o CNPJ 19131243000197...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:00"}
+{"level":"info","message":"✅ [SEFAZ Provider] Consulta concluída. 0 novos XMLs encontrados para o CNPJ 19131243000197.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:02"}
+{"level":"info","message":"   ✅ [Job 3] Concluído. Novas: 0 | Duplicadas: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:02"}
+{"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:02"}
+{"level":"info","message":"✅ [Job 3] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:10:03"}
+{"level":"info","message":"⏰ [CronManager] Disparando rotina de Sincronização SEFAZ...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] A iniciar rotina global de captura de XMLs...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] 1 empresas elegíveis para sincronização.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"⚙️ [Job 4] A iniciar worker: sync_nfe_sefaz","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"   🔄 [Job 4] Sincronizando: OPEN KNOWLEDGE BRASIL (CNPJ: 19131243000197)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"🌐 [SEFAZ Provider] A iniciar comunicação segura com a SEFAZ para o CNPJ 19131243000197...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:00"}
+{"level":"info","message":"✅ [SEFAZ Provider] Consulta concluída. 0 novos XMLs encontrados para o CNPJ 19131243000197.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:02"}
+{"level":"info","message":"   ✅ [Job 4] Concluído. Novas: 0 | Duplicadas: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:02"}
+{"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:02"}
+{"level":"info","message":"✅ [Job 4] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:03"}
+{"level":"info","message":"[HTTP] POST /v1/auth/login","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"email\":\"admin@lhsolucao.com\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"🔐 Login com sucesso: admin@lhsolucao.com (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/parceiros","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"🔄 Nome não fornecido para CNPJ 19131243000197. Buscando na BrasilAPI...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"🔍 Consultando BrasilAPI para CNPJ: 19131243000197","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/produtos","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"gtin\":\"7891000315507\",\"descricao\":\"TESTE SCRIPT\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"cnpj\":\"19131243000197\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"error","message":"[EmpresaService] Erro no cadastro: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"error","message":"[App Error Middleware] Msg: Esta empresa (CNPJ) já está cadastrada na sua conta.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] GET /v1/empresas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/empresas/1/certificado","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"arquivo_pfx_base64\":\"TU9DS19DRVJUSUZJQ0FETw==\",\"senha\":\"***OCULTA***\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"🔐 Certificado A1 configurado para a Empresa ID 1 (Tenant 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <nfeProc versao=\\\"4.00\\\" xmlns=\\\"http://www.portalfiscal.inf.br/nfe\\\">\\n      <NFe>\\n        <infNFe Id=\\\"NFe35231019131243000197550010000001231000001234\\\" versao=\\\"4.00\\\">\\n          <ide><nNF>123</nNF><serie>1</serie><dhEmi>2023-10-01T12:00:00-03:00</dhEmi><tpNF>1</tpNF></ide>\\n          <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Teste</xNome></emit>\\n          <dest><CNPJ>00000000000000</CNPJ><xNome>Cliente Teste</xNome></dest>\\n          <det nItem=\\\"1\\\">\\n            <prod><cProd>1</cProd><xProd>Produto Teste</xProd><CFOP>5102</CFOP><vProd>100.00</vProd></prod>\\n            <imposto><ICMS><ICMS00><vICMS>18.00</vICMS></ICMS00></ICMS></imposto>\\n          </det>\\n          <total><ICMSTot><vProd>100.00</vProd><vNF>100.00</vNF><vICMS>18.00</vICMS></ICMSTot></total>\\n        </infNFe>\\n      </NFe>\\n    </nfeProc>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"🧾 NFe 123 importada. (Tenant: 1, Empresa: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/2/auditar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"Auditoria Fiscal concluída para a NFe 123. Alertas encontrados: 0","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/nfe/2/manifestar","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"tipo_manifestacao\":\"ciencia\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"Manifestação 'ciencia' registada para a NFe 35231019131243000197550010000001231000001234.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/nfse/upload","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"empresa_id\":1,\"xml\":\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n    <NFSe>\\n      <infNFSe>\\n        <nNF>999</nNF>\\n        <cVerif>ABC123XYZ</cVerif>\\n        <dhEmi>2023-10-02T15:00:00</dhEmi>\\n        <emit><CNPJ>19131243000197</CNPJ><xNome>Empresa Prestadora</xNome></emit>\\n        <dest><CNPJ>00000000000000</CNPJ><xNome>Tomador Teste</xNome></dest>\\n        <serv><vServ>500.00</vServ><vISS>25.00</vISS><xDescServ>Desenvolvimento SaaS</xDescServ></serv>\\n      </infNFSe>\\n    </NFSe>\"}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"✅ NFSe Nacional 999 gravada com sucesso (Tenant: 1)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard/evolucao?ano=2023","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] GET /v1/dashboard/alertas","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] POST /v1/jobs/sync","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP Body] {\"tipo\":\"sync_nfse\",\"empresa_id\":1}","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"⚙️ [Job 5] A iniciar worker: sync_nfse","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"[HTTP] GET /v1/jobs/stats","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:21"}
+{"level":"info","message":"✅ [Job 5] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:11:24"}
+{"level":"info","message":"⏰ [CronManager] Disparando rotina de Sincronização SEFAZ...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] A iniciar rotina global de captura de XMLs...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"info","message":"🤖 [SefazSyncWorker] 1 empresas elegíveis para sincronização.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"info","message":"⚙️ [Job 6] A iniciar worker: sync_nfe_sefaz","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"info","message":"   🔄 [Job 6] Sincronizando: OPEN KNOWLEDGE BRASIL (CNPJ: 19131243000197)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"info","message":"🌐 [SEFAZ Provider] A iniciar comunicação segura com a SEFAZ para o CNPJ 19131243000197...","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:00"}
+{"level":"error","message":"❌ [SEFAZ Provider] Erro de comunicação: SEFAZ: Ambiente Nacional Indisponível (HTTP 503)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
+{"level":"error","message":"   ❌ Falha na sincronização da empresa 19131243000197: Falha na comunicação com a SEFAZ: SEFAZ: Ambiente Nacional Indisponível (HTTP 503)","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
+{"level":"info","message":"🤖 [SefazSyncWorker] Rotina global concluída com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:02"}
+{"level":"info","message":"✅ [Job 6] Concluído com sucesso.","service":"erp-fiscal-backend","timestamp":"2026-05-15 23:12:03"}

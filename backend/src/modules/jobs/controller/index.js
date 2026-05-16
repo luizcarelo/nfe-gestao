@@ -1,107 +1,69 @@
-// Ficheiro: /home/engeradios/nfe-gestao/backend/src/modules/jobs/controller/index.js
-
-const { pool } = require('../../../config/database');
-const { logger } = require('../../../infra/logger');
-const nfeService = require('../../nfe/service');
-const nfseService = require('../../nfse/service');
-
-class JobController {
-  /**
-   * Lista o histórico de execuções da tabela job_logs
-   */
-  async index(req, res) {
-    try {// Ficheiro: backend/src/modules/jobs/controller/index.js
-
-const { pool } = require('../../../config/database');
-const { logger } = require('../../../infra/logger');
+/**
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/jobs/controller/index.js
+ * Controlador do Monitor de Tarefas
+ */
 const jobService = require('../service');
+const AppError = require('../../../shared/errors/AppError');
 
 class JobController {
-  /**
-   * Lista o histórico de execuções para o Monitor de Tarefas e Auditoria no Frontend
-   */
-  async index(req, res) {
-    try {
-      const { rows } = await pool.query(`
-        SELECT id, job_name, status, detalhes, started_at, finished_at 
-        FROM job_logs 
-        ORDER BY started_at DESC LIMIT 100
-      `);
-      return res.json({ success: true, data: rows });
-    } catch (error) {
-      logger.error(`[JobController] Erro ao listar auditoria de jobs: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Falha ao carregar a trilha de tarefas.' });
+  
+  async iniciarSincronizacao(req, res) {
+    const { tenant_id } = req.user;
+    const { tipo, empresa_id } = req.body;
+
+    if (!tipo || !empresa_id) {
+      throw new AppError('O tipo de sincronização e o ID da empresa são obrigatórios.', 400);
     }
+
+    const job = await jobService.criarJobSincronizacao(tenant_id, empresa_id, tipo);
+
+    return res.status(201).json({ success: true, message: 'Tarefa iniciada.', data: job });
   }
 
-  /**
-   * Endpoint acionado pelo Frontend (ou via Cron) para disparar a sincronização.
-   * Utiliza o padrão Fire-and-Forget para não manter o HTTP request pendurado.
-   */
-  async syncAll(req, res) {
-    try {
-      logger.info('[JobController] Pedido de Sincronização Global recebido.');
-      
-      // Responder imediatamente para libertar o cliente HTTP
-      res.json({ success: true, message: 'Orquestração de Sincronização Global iniciada em background. Consulte o monitor para ver o progresso.' });
+  async listar(req, res) {
+    const { tenant_id } = req.user;
+    const { pagina = 1, limite = 20, status } = req.query;
 
-      // Dispara o serviço em background (Fire and Forget)
-      jobService.runSyncAll().catch(err => {
-        logger.error(`[JobController] Falha crítica no background job: ${err.message}`);
-      });
+    const result = await jobService.listarJobs(tenant_id, parseInt(pagina), parseInt(limite), status);
 
-    } catch (error) {
-      logger.error(`[JobController] Erro ao disparar job: ${error.message}`);
-      if (!res.headersSent) {
-          return res.status(500).json({ success: false, message: 'Falha ao iniciar orquestração de tarefas.' });
-      }
-    }
-  }
-}
-
-module.exports = new JobController();
-      const { rows } = await pool.query(
-        `SELECT id, job_name, status, detalhes, started_at, finished_at 
-         FROM job_logs 
-         ORDER BY started_at DESC LIMIT 50`
-      );
-      return res.json({ success: true, data: rows });
-    } catch (error) {
-      logger.error(`Erro ao listar logs de jobs: ${error.message}`);
-      return res.status(500).json({ success: false, message: 'Falha ao carregar monitor de tarefas.' });
-    }
+    return res.status(200).json({
+      success: true,
+      data: result.dados,
+      paginacao: result.metadados
+    });
   }
 
-  /**
-   * Dispara manualmente a sincronização global para todas as empresas
-   */
-  async syncAll(req, res) {
-    try {
-      logger.info('[JobController] Disparando Sincronização Global Manual');
-      
-      // Obter todas as empresas cadastradas
-      const { rows: empresas } = await pool.query('SELECT id, razao_social FROM empresas');
-      
-      // Responder imediatamente ao cliente (Fire and Forget) para não travar o frontend
-      res.json({ success: true, message: `Sincronização global iniciada para ${empresas.length} empresas em background.` });
+  async consultarStatus(req, res) {
+    const { tenant_id } = req.user;
+    const { id } = req.params;
 
-      // Execução em background
-      for (const empresa of empresas) {
-          try {
-              // Sincroniza NF-e (SEFAZ)
-              await nfeService.sincronizarComSefaz(empresa.id);
-              // Sincroniza NFS-e (ADN Nacional)
-              await nfseService.sincronizarADN(empresa.id);
-          } catch (err) {
-              logger.error(`[Job] Falha na sincronização automática da empresa ${empresa.razao_social}: ${err.message}`);
-          }
-      }
-    } catch (error) {
-      logger.error(`Erro ao disparar job global: ${error.message}`);
-      if (!res.headersSent) {
-          return res.status(500).json({ success: false, message: error.message });
-      }
-    }
+    const job = await jobService.obterJobPorId(tenant_id, id);
+    if (!job) throw new AppError('Tarefa não encontrada.', 404);
+
+    return res.status(200).json({ success: true, data: job });
+  }
+
+  async obterEstatisticas(req, res) {
+    const { tenant_id } = req.user;
+    const stats = await jobService.obterEstatisticas(tenant_id);
+
+    return res.status(200).json({ success: true, data: stats });
+  }
+
+  async tentarNovamente(req, res) {
+    const { tenant_id } = req.user;
+    const { id } = req.params;
+
+    const resultado = await jobService.reiniciarJob(tenant_id, id);
+    return res.status(200).json({ success: true, message: resultado.message });
+  }
+
+  async cancelar(req, res) {
+    const { tenant_id } = req.user;
+    const { id } = req.params;
+
+    const resultado = await jobService.cancelarJob(tenant_id, id);
+    return res.status(200).json({ success: true, message: resultado.message });
   }
 }
 

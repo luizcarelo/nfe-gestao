@@ -1,35 +1,36 @@
-// Caminho completo do ficheiro: backend/src/modules/nfe/routes/index.js
-
-import { Router } from 'express';
-import { NfeController } from '../controller/index.js';
-
-const nfeRouter = Router();
-const nfeController = new NfeController();
-
 /**
- * ============================================================================
- * MÓDULO: DOWNLOAD E IMPORTAÇÃO DE NF-E VIA API
- * Objetivo Fiscal: Garantir a imutabilidade, rastreabilidade e integridade 
- * da aquisição de documentos fiscais através do Web Service Nacional (SEFAZ).
- * ============================================================================
+ * Ficheiro: /home/luizcarelo/nfe-gestao/backend/src/modules/nfe/routes/index.js
+ * Definição dos endpoints da API para Gestão de Notas Fiscais Eletrónicas (SaaS)
+ * Todas as rotas assumem que o authMiddleware (com tenant_id) já foi aplicado no app.js
  */
 
-/**
- * Rota: POST /api/nfe/sincronizar
- * Descrição: Aciona o NacionalClient para comunicar com o nfeDistDFeInteresse.
- * Descarrega os XMLs completos e encaminha para o NFeParserService para 
- * armazenamento relacional integral e imutável.
- * * Payload esperado: { "cnpj_empresa": "12345678000199", "ultimo_nsu": "1005" }
- */
-nfeRouter.post('/sincronizar', nfeController.sincronizarNotasSefaz.bind(nfeController));
+const { Router } = require('express');
+const nfeController = require('../controller');
 
-/**
- * Rota: GET /api/nfe/:chave_acesso
- * Descrição: Rota de apoio à auditoria fiscal. Recupera uma NF-e específica
- * (cabeçalho, itens, e impostos) já processada e armazenada no PostgreSQL.
- * * Parâmetro: chave_acesso (String de 44 posições numéricas)
- */
-nfeRouter.get('/:chave_acesso', nfeController.obterNotaPorChave.bind(nfeController));
+const nfeRoutes = Router();
 
-// Exporte o router para ser injetado no backend/src/app.js
-export default nfeRouter;
+// Rota POST para processamento de upload manual de XML da Nota Fiscal
+// Ex: POST /v1/nfe/upload
+nfeRoutes.post('/upload', nfeController.uploadXml);
+
+// Rota GET para listar as notas do Tenant com paginação e filtros
+// Ex: GET /v1/nfe?pagina=1&limite=50&empresa_id=5
+nfeRoutes.get('/', nfeController.listar);
+
+// Rota GET para obter todos os detalhes de uma NFe específica
+// Ex: GET /v1/nfe/123/detalhes
+nfeRoutes.get('/:id/detalhes', nfeController.detalhar);
+
+// Rota GET para descarregar o PDF (DANFE) da NFe
+// Ex: GET /v1/nfe/123/danfe
+nfeRoutes.get('/:id/danfe', nfeController.baixarDanfe);
+
+// Rota POST para executar a auditoria fiscal inteligente na NFe (Oceano Azul)
+// Ex: POST /v1/nfe/123/auditar
+nfeRoutes.post('/:id/auditar', nfeController.auditarNota);
+
+// Rota POST para Manifestação do Destinatário (Ciência, Desconhecimento, etc.) na SEFAZ
+// Ex: POST /v1/nfe/123/manifestar
+nfeRoutes.post('/:id/manifestar', nfeController.manifestar);
+
+module.exports = nfeRoutes;
